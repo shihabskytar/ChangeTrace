@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChangeTrace — What changed on your PC?</title><link rel="stylesheet" href="styles.css"></head>
+<body><header><h1>ChangeTrace</h1><p class="tag">Discover exactly what changed on your PC. All data stays on this machine.</p>
+<button id="scanBtn">Scan now</button><span id="scanStatus"></span></header>
+<nav>
+<button data-tab="timeline" class="active">Timeline</button>
+<button data-tab="compare">Compare</button>
+<button data-tab="snapshots">Snapshots</button>
+<button data-tab="report">Report</button>
+</nav>
+<main>
+<section id="tab-timeline" class="tab active">
+<label>Filter by type <select id="typeFilter"><option value="">All</option><option>app</option><option>startup</option><option>service</option><option>task</option><option>network</option><option>setting</option><option>driver</option></select></label>
+<label>From <input type="date" id="fromDate"></label><label>To <input type="date" id="toDate"></label>
+<button id="refreshTimeline">Refresh</button>
+<ul id="timeline"></ul>
+</section>
+<section id="tab-compare" class="tab">
+<label>From snapshot <select id="fromSnap"></select></label>
+<label>To snapshot <select id="toSnap"></select></label>
+<button id="compareBtn">Compare</button>
+<div id="explanation" class="card"></div><div id="compareResult"></div>
+</section>
+<section id="tab-snapshots" class="tab"><ul id="snapshots"></ul></section>
+<section id="tab-report" class="tab">
+<label>Snapshot <select id="reportSnap"></select></label>
+<button id="openReport">Open HTML report</button>
+<button id="exportJson">Export JSON</button>
+<p>Tip: in the report page, use your browser's Print → Save as PDF to export a PDF diagnostic report.</p>
+</section>
+</main><script src="app.js"></script></body></html>
