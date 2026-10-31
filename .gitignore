@@ -1,0 +1,4 @@
+node_modules/
+changetrace.db
+*.db
+.DS_Store
